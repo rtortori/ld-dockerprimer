@@ -335,7 +335,7 @@ Connect to http://localhost:8180:
 
 [image here]
 Inline-style: 
-![NGINX Landing Page](https://raw.githubusercontent.com/rtortori/ld-dockerprimer/master/Vagrantfile)
+![NGINX Landing Page](https://raw.githubusercontent.com/rtortori/ld-dockerprimer/master/images/ss1.png)
 
 Great. Now let's understand a bit more about how things are working in the background.
 
