@@ -27,7 +27,7 @@ Unlike VMs, which live on top of an [hypervisor](https://en.wikipedia.org/wiki/H
 On your machine, pick any directory for this project and download the material required for the exercises using the following command in the terminal or Windows Powershell:
 
 ```bash
-git clone https://github.com/rtortori/dockerprimer_ita.git
+git clone https://github.com/rtortori/ld-dockerprimer.git
 ```
 
 For this specific session, what you need to know is that git will download the content of a repository from [GitHub.com](http://github.com), which is a source code management and distributed version control platform.<br>
