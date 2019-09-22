@@ -333,7 +333,6 @@ The Ubuntu virtual machine you are working on, has been pre-configured to forwar
 
 Connect to http://localhost:8180:
 
-Inline-style: 
 ![NGINX Landing Page](https://raw.githubusercontent.com/rtortori/ld-dockerprimer/master/images/ss1.png)
 
 Great. Now let's understand a bit more about how things are working in the background.
