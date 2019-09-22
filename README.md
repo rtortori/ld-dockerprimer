@@ -79,6 +79,29 @@ vagrant status
 ```
 
 <details>
+<summary>Sample Output</summary>
+<pre>
+➜  dockerprimer git:(master) > vagrant status
+Current machine states:
+
+developer                 running (virtualbox)
+production                running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state. For more information about a specific
+VM, run `vagrant status NAME`.
+</pre>
+</details>
+
+You will see that Vagrant has created two virtual machines named *developer* and *production* running Ubuntu Linux OS. For this lecture, you will only use the *developer* machine.
+
+Connect to the *developer* machine. To do so use the following command:
+
+```bash
+vagrant ssh developer
+```
+
+<details>
     <summary>Sample Output</summary>
     	<pre>
 ➜  dockerprimer git:(master) ✗ > vagrant ssh developer
