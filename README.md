@@ -334,6 +334,8 @@ The Ubuntu virtual machine you are working on, has been pre-configured to forwar
 Connect to http://localhost:8180:
 
 [image here]
+Inline-style: 
+![NGINX Landing Page](https://raw.githubusercontent.com/rtortori/ld-dockerprimer/master/Vagrantfile)
 
 Great. Now let's understand a bit more about how things are working in the background.
 
