@@ -522,8 +522,10 @@ Connection to 127.0.0.1 closed.
 </details>
 
 #### Resources
-For further info, you may check the following resources:
+For further info, have a look at [Cisco DevNet Docker Sandboxes](https://developer.cisco.com/search/docker/), you will find plenty of Learning Labs.
 
+
+##### Additional Docker resources
 1. [Docker Get Started Tutorial](https://docs.docker.com/get-started/)
 1. [Install Docker on Windows](https://docs.docker.com/docker-for-windows/install/)
 1. [Install Docker on MacOS](https://docs.docker.com/docker-for-mac/)
