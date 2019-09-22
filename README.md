@@ -138,7 +138,7 @@ vagrant@developer-vm:~$
 #### Get started with Docker containers
 
 Let's start to explore Docker containers. 
-Both VMs have Docker pre-installed. A docker engine is running as a service in the operating system but to interact with it you need a client, which in this case is the 'docker' command. The docker command will work as a frontend to interact with the actual docker engine using its APIs.
+Both VMs have Docker pre-installed. A docker engine is running as a system service in the operating system but to interact with it you need a client, which in this case is the 'docker' command. The docker command will work as a frontend to interact with the actual docker engine using its APIs.
 
 Let's get started. Our first contact with Docker containers is fairly straightforward, run the following command:
 
@@ -297,7 +297,7 @@ fa184a0f808f        centos              "bash"              14 hours ago        
 </details>
 
 
-As you can see, the container you created a few minutes ago with the *centos* image is not running anymore, but exited when you disconnected. Again, once the process exists (bash), the container terminates.
+As you can see, the container you created a few minutes ago with the *centos* image is not running anymore, but exited when you disconnected. Again, once the process exits (bash), the container terminates.
 
 Now let's move forward and create a container with an actual application. Let's start a web server:
 
@@ -321,7 +321,7 @@ a0b6b933415921b13a134b7672f51fae379b9fd91b90181d179ec7c4e7b08eaf
 </details>
 
 Again, the *nginx* image is not present on your local image repository so the Docker engine will download it from [Docker Hub](http://hub.docker.com).<br>
-This time, we didn't have to specify any command because the *nginx* image has been built so it will run the nginx process as soon as it starts. We also used the "d" option, which will [daemonize](http://man7.org/linux/man-pages/man3/daemon.3.html) the container (basically run it in background), as well as the "p" option which will map the host OS port 80 to the container process listening port 80 which typical in case of web servers.
+This time, we didn't have to specify any command because the *nginx* image has been built to run the nginx process as soon as it starts. We also used the "d" option, which will [daemonize](http://man7.org/linux/man-pages/man3/daemon.3.html) the container (basically run it in background), as well as the "p" option which will map the host OS port 80 to the container process listening port 80 which typical in case of web servers.
 
 Run the docker ps command, which will show the running containers:
 
@@ -372,13 +372,20 @@ ps -ef | grep nginx | grep -v grep
 vagrant@developer-vm:~$ ps -ef | grep nginx | grep -v grep
 root      6110  6085  0 22:20 pts/0    00:00:00 nginx: master process nginx -g daemon off;
 systemd+  6155  6110  0 22:20 pts/0    00:00:00 nginx: worker process
+</pre>
+</details>
 
 As you can see in the sample output, the nginx process is actually running in the developer machine with process ID (PID) 6110 and Parent process ID 6085. (Note: your output may show a different PID).
 
-Let's inspect the parent process (replace 6085 with the PPID you've seen in the previous command): 
-ps -ef | grep 6085 | grep -v grep
+Let's inspect the parent process (replace 6085 with the PPID you've seen in the previous command):
 
-Sample output:
+```bash
+ps -ef | grep 6085 | grep -v grep
+```
+
+<details>
+<summary>Sample Output</summary>
+<pre>
 vagrant@developer-vm:~$ ps -ef | grep 6085 | grep -v grep
 root      6085  3426  0 22:20 ?        00:00:00 containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/a0b6b933415921b13a134b7672f51fae379b9fd91b90181d179ec7c4e7b08eaf -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-runc
 root      6110  6085  0 22:20 pts/0    00:00:00 nginx: master process nginx -g daemon off;
@@ -487,7 +494,13 @@ One last word on registries.<br>
 You can also specify custom registries, in case you want to use a [private registry](https://docs.docker.com/registry/deploying/) or alternative public docker compatible registries like the ones from [Azure](https://azure.microsoft.com/en-us/services/container-registry/) or [Google](https://cloud.google.com/container-registry/).
 
 That's it for now.
-Exit the developer machine and go back to your machine terminal, where you originally run the command 'vagrant up'.
+Exit the developer machine 
+
+```bash
+exit
+```
+
+and go back to your terminal, where you originally run the command 'vagrant up'.
 Clean up the environment with the following command:
 
 ```bash
@@ -507,3 +520,12 @@ Connection to 127.0.0.1 closed.
 ==> developer: Destroying VM and associated drives...
 </pre>
 </details>
+
+#### Resources
+For further info, you may check the following resources:
+
+1. [Docker Get Started Tutorial](https://docs.docker.com/get-started/)
+1. [Install Docker on Windows](https://docs.docker.com/docker-for-windows/install/)
+1. [Install Docker on MacOS](https://docs.docker.com/docker-for-mac/)
+1. [Install Docker on Ubuntu Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+1. [Install Docker on Centos Linux](https://docs.docker.com/install/linux/docker-ce/centos/)
