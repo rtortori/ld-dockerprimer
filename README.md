@@ -8,6 +8,18 @@
 Containers are described by most as a game-changer in several markets: Data Center, Cloud, IoT and even virtual network functions.
 This document aims to provide basic knowledge about containers, implementing a "Learn and do" approach targeting people that explore Docker containers for the very first time.
 
+Why containers are so popular nowadays? From docker.com:
+>Containerization is increasingly popular because containers are:
+
+>* Flexible: Even the most complex applications can be containerized.
+>* Lightweight: Containers leverage and share the host kernel.
+>* Interchangeable: You can deploy updates and upgrades on-the-fly.
+>* Portable: You can build locally, deploy to the cloud, and run anywhere.
+>* Scalable: You can increase and automatically distribute container replicas.
+>* Stackable: You can stack services vertically and on-the-fly.
+
+Containers provide a way to package an application and its dependencies in a lightweight, portable, [standardized unit of software](https://www.docker.com/resources/what-container)  that can be spun up in milliseconds without the need of the unnecessary overhead of OS virtualization.
+
 The first thing you need to know is that containers are not a recent concept. 
 They've been there for years but not very easy to operate and maintain at scale, as the amount of effort required to isolate processes, provide networking, storage, etc. has always been a big obstacle.
 [Docker](https://www.docker.com/get-started) came up with a common framework that basically orchestrates all required components together, creating simple APIs to manage containers as well as building an ecosystem that allows for easy application packaging (containerization) and sharing using special repositories (registries). Docker then [open sourced](https://github.com/docker) this implementation, allowing anyone to use and deliver containerized applications easily.
